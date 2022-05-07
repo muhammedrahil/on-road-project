@@ -1,0 +1,31 @@
+{% extends 'mechanicindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/upwork">
+  <div align="center">
+    <h3><b>WORK STATUS</b></h3>
+    <table width="400" border="1">
+      <tr>
+        <th>Work</th>
+        <th><select name="r_id" id="select" required>
+            {% for i in val %}
+            <option value="{{i[0]}}" >USER={{i[9]}} & WORK={{i[2]}}</option>
+            {% endfor %}
+          </select></th>
+      </tr>
+      <tr>
+        <th>Status</th>
+        <td><input type="text" name="textfield2" value="{{val[8]}}" /></td>
+      </tr>
+      <tr>
+        <td colspan="2"><label> </label>
+            <div align="center">
+              <input type="submit" name="Submit" value="Submit" />
+          </div></td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+{% endblock %}

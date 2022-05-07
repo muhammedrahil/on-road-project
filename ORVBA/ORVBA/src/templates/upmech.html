@@ -1,0 +1,47 @@
+{% extends 'mechanicindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/upmech">
+  <div align="center">
+    <h3><b>PROFILE</b></h3>
+    <table width="700" border="0">
+      <tr>
+        <th>First Name</th>
+        <th><label>
+          <input type="text" name="fname" value="{{val[1]}}" required pattern="[A-Z a-z]{3,20}"/>
+        </label></th>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <th><label>
+          <input type="text" name="lname" value="{{val[2]}}" required pattern="[A-Z a-z]{1,20}"/>
+        </label></th>
+      </tr>
+      <tr>
+        <th>Contact Number </th>
+        <td><input type="text" name="number" value="{{val[3]}}" required pattern="[6789][0-9]{9}"/></td>
+      </tr>
+      <tr>
+        <th>Email id </th>
+        <td><input type="text" name="email" value="{{val[4]}}" required pattern="[a-z 0-9 . _ % + -]+@[a-z 0-9 . -]+\.[a-z]{2,3}$"/></td>
+      </tr>
+      <tr>
+        <th>Username</th>
+        <td><input type="text" name="user" value="{{value[1]}}" required/></td>
+      </tr>
+      <tr>
+        <th>Password</th>
+        <td><input type="password" name="passwd" value="{{value[2]}}" required/></td>
+      </tr>
+      <tr>
+        <td colspan="2"><label> </label>
+            <div align="center">
+              <input type="submit" name="Submit" value="Update" />
+          </div></td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+{% endblock %}

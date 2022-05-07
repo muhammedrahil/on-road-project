@@ -1,0 +1,28 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="" action="/addpetrolp">
+  <div align="center">
+    <h3><b>PETROL PUMPS LIST</b></h3>
+  <table width="1000" border="4">
+    <tr>
+      <th width="102">Petrol Pump Name </th>
+      <th>Longitude</th>
+      <th>Latitude</th>
+      <th>Phone-no</th>
+      <th width="192">&nbsp;</th>
+    </tr>
+    <tr>{% for i in val %}
+      <td>{{i[1]}}</td>
+      <td>{{i[3]}}</td>
+      <td>{{i[4]}}</td>
+      <td>{{i[2]}}</td>
+      <td><p><a href="{{url_for('mngpetrolp',id=i[0])}}">Edit</a></p>
+      <p><a href="{{url_for('deletepetrol',pid=i[0])}}" onclick="return confirm('ARE U SURE?')">Delete</a></p></td>
+    </tr>{% endfor %}
+  </table>
+  <button onclick="/addpetrolp">ADD</button>
+  </div>
+</form>
+</body>
+{% endblock %}

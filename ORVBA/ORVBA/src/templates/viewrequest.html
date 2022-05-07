@@ -1,0 +1,27 @@
+{% extends 'mechanicindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <h3><b>USER REQUESTS</b></h3>
+    <table width="1000" border="4">
+      <tr>
+        <th width="102">Username</th>
+        <th>Date</th>
+        <th width="600">Request</th>
+        <td width="192">&nbsp;</td>
+      </tr>
+      <tr>{% for i in value %}
+        <td>{{i[0]}} {{i[1]}}</td>
+        <td>{{i[6]}}</td>
+        <td>{{i[5]}}</td>
+        <td><a href="{{url_for('acceptr',id=i[3])}}">Accept</a><br>
+            <a href="{{url_for('rejectr',id=i[3])}}" onclick="return confirm('Confirm Reject?')">Reject</a><br>
+            <a href="http://maps.google.com/maps?q={{i[8]}},{{i[9]}}">--TRACK--</a></td>
+      </tr>{% endfor %}
+    </table>
+  </div>
+</form>
+</body>
+{% endblock %}

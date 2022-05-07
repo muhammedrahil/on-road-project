@@ -1,0 +1,50 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/editmech">
+  <div align="center">
+    <h3><b>EDIT MECHANIC DETAILS</b></h3>
+    <table width="600" border="0">
+        <tr>
+        <th>Service Center</th>
+        <td><label>
+          <select name="select">
+            {% for i in vals %}
+            <option value="{{i[0]}}" {% if val[8] == i[0] %} selected {% endif %}>{{i[1]}}</option>
+            {% endfor %}
+          </select>
+        </label></td>
+      </tr>
+      <tr>
+        <th>First Name</th>
+        <td><label>
+          <input type="text" name="fname" value="{{val[1]}}" required apttern="[A-Z a-z]{3,20}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td><label>
+          <input type="text" name="lname" value="{{val[2]}}" required pattern="[A-Z a-z]{1,20]"/>
+        </label></td>
+      </tr>
+
+      <tr>
+        <th>Contact Number </th>
+        <td><input type="text" name="ph" value="{{val[3]}}" required pattern="[6789][0-9]{9}" /></td>
+      </tr>
+      <tr>
+        <th>Email id </th>
+        <td><input type="text" name="email" value="{{val[4]}}" required pattern="[a-z 0-9 . _ % + -]+@[a-z 0-9 . -]+\.[a-z]{2,3}$"/></td>
+      </tr>
+      <tr>
+        <td colspan="2"><label> </label>
+            <div align="center">
+              <input type="submit" name="Submit" value="Update" />
+          </div></td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+{% endblock %}

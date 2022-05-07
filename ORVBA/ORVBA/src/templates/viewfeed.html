@@ -1,0 +1,33 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="viewfeed1">
+  <div align="center">
+    <h3><b>FEEDBACKS</b></h3>
+    <table width="1000" border="4">
+      <tr>
+        <th colspan="3">Type
+          <label>
+          <select name="select">
+            <option>User</option>
+             <option>Public</option>
+          </select>
+          <input type="submit" name="Submit" value="search">
+        </label>          <label></label></th>
+      </tr>
+      <tr>
+        <th>Username</th>
+        <th>Date</th>
+        <th>Feedback</th>
+      </tr>
+      <tr>{% for i in val %}
+        <td>{{i[0]}}</td>
+        <td>{{i[4]}}</td>
+        <td>{{i[5]}}</td>
+      </tr>{% endfor %}
+    </table>
+  </div>
+</form>
+</body>
+{% endblock %}

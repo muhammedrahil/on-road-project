@@ -1,0 +1,24 @@
+{% extends 'mechanicindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <div align="center">
+    <h3><b>FEDDBACKS</b></h3>
+    <table width="1000" border="4">
+      <tr>
+        <th>UserName</th>
+        <th>Date</th>
+        <th>Feedback</th>
+
+      </tr>
+      <tr>{% for i in val %}
+        <td>{{i[0]}}</td>
+        <td>{{i[4]}}</td>
+        <td>{{i[5]}}</td>
+
+      </tr>{% endfor %}
+    </table>
+  </div>
+</form>
+</body>
+{% endblock %}

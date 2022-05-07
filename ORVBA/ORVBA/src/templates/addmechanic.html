@@ -1,0 +1,54 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+
+<body>
+<form id="form1" name="form1" method="post" action="/addmech">
+  <div align="center">
+    <h3><b>ADD NEW MECHANIC</b></h3><br><br>
+    <table width="800" border="0" >
+      <tr>
+        <th>First Name</th>
+        <td><label>
+          <input type="text" name="fname"  required pattern="[A-Z a-z]{3,20}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th>Last Name</th>
+        <td><label>
+          <input type="text" name="lname"  required pattern="[A-Z a-z]{1,20}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th>Service Center </th>
+        <td><select name="sid" id="select" required >
+            {% for i in val %}
+            <option value="{{i[0]}}" >{{i[1]}}</option>
+            {% endfor %}
+          </select></td>
+      </tr>
+      <tr>
+        <th>Contact Number </th>
+        <td><input type="text" name="number"  required pattern="[6789][0-9]{9}"/></td>
+      </tr>
+      <tr>
+        <th>Email id </th>
+        <td><input type="text" name="email"  required pattern="[a-z 0-9 . _ % + -]+@[a-z 0-9 . -]+\.[a-z]{2,3}$"/></td>
+      </tr>
+      <th>Username </th>
+        <td><input type="text" name="user"  required /></td>
+      </tr>
+      <th>Password </th>
+        <td><input type="password" name="passwd"  required /></td>
+      </tr>
+      <tr>
+        <td colspan="2"><label> </label>
+            <div align="center">
+              <input type="submit" name="Submit" value="SAVE" />
+          </div></td>
+      </tr>
+    </table>
+
+  </div>
+</form>
+</body>
+{% endblock %}

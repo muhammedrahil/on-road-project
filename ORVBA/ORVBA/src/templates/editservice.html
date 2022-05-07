@@ -1,0 +1,40 @@
+{% extends 'adminpgs.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="post" action="/editservice">
+  <div align="center">
+    <h3><b>EDIT SERVICE CENTER DETAILS</b></h3>
+    <table width="600" border="0">
+      <tr>
+        <th width="96">Service Center Name </th>
+        <td width="152"><label>
+          <input type="text" name="name" value="{{val[1]}}" required pattern="[A-Z a-z]{3,20}"/>
+        </label></td>
+      </tr>
+      <tr>
+        <th>Longitude</th>
+        <td><input type="text" name="lat" value="{{val[2]}}" required pattern="^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}"/></td>
+      </tr>
+      <tr>
+        <th>Latitude</th>
+        <td><input type="text" name="lon" value="{{val[3]}}" required pattern="^-?([1-8]?[1-9]|[1-9]0)\.{1}\d{1,6}"/></td>
+      </tr>
+      <tr>
+        <th>Email </th>
+        <td><input type="text" name="email" value="{{val[5]}}" required pattern="[a-z 0-9 . _ % + -]+@[a-z 0-9 . -]+\.[a-z]{2,3}$"/></td>
+      </tr>
+      <tr>
+        <th>Contact number </th>
+        <td><input type="text" name="no" value="{{val[4]}}" required pattern="[6789][0-9]{9}"/></td>
+      </tr>
+      <tr>
+        <td colspan="2"><label> </label>
+            <div align="center">
+              <input type="submit" name="Submit" value="Update" />
+          </div></td>
+      </tr>
+    </table>
+  </div>
+</form>
+</body>
+{% endblock %}

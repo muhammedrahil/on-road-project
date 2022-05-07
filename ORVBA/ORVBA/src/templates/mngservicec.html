@@ -1,0 +1,30 @@
+{% extends 'adminindex.html' %}
+{% block body %}
+<body>
+<form id="form1" name="form1" method="" action="/addservicecenter">
+  <div ALIGN="CENTER">
+    <h3><b>SERVICE CENTER LIST</b></h3>
+  <table width="1000" border="4">
+    <tr>
+      <th width="102">Service center Name </th>
+      <th width="8">Longitude</th>
+      <th width="14">Latitude</th>
+      <th width="14">Email</th>
+      <th width="14">Phone-no</th>
+      <td width="192">&nbsp;</td>
+    </tr>
+    <tr>{% for i in val %}
+      <td>{{i[1]}}</td>
+      <td>{{i[2]}}</td>
+      <td>{{i[3]}}</td>
+      <td>{{i[5]}}</td>
+      <td>{{i[4]}}</td>
+      <td><p><a href="{{url_for('mngservice',id=i[0])}}">Edit</a></p>
+      <p><a href="{{url_for('deleteservice',id=i[0])}}" onclick="return confirm('ARE U SURE?')">Delete</a></p></td>
+    </tr>{% endfor %}
+  </table>
+  <button onclick="/addservicecenter">ADD</button>
+</div>
+</form>
+</body>
+{% endblock %}
